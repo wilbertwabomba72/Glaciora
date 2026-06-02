@@ -41,6 +41,36 @@
       margin: 0 auto;
     }
 
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(142, 232, 255, 0.14);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: 0;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-weight: 700;
+    }
+
     h1 {
       margin: 0;
       font-size: clamp(3rem, 8vw, 6.7rem);
@@ -107,9 +137,20 @@
       font-size: 1.15rem;
     }
 
+    .content {
+      max-width: 820px;
+    }
+
     footer {
       padding: 30px 0 40px;
       color: var(--muted);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     a {
@@ -124,10 +165,25 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
+      .nav,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap nav" aria-label="Site navigation">
+      <a class="brand" href="index.html">Glaciora</a>
+      <nav class="nav-links">
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <section class="hero">
       <div class="wrap">
@@ -140,6 +196,14 @@
           <li>SpriteKit</li>
           <li>iOS 13+</li>
         </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap content">
+        <h2>About Glaciora</h2>
+        <p>Glaciora is a single-player card-battle game built for quick offline sessions. Across 50 levels, players choose a hero, manage cards and energy, study enemy intent, and unlock progress locally on their device.</p>
+        <p>The game supports iPhone and iPad, uses SpriteKit and Objective-C, and runs on iOS 13 and later.</p>
       </div>
     </section>
 
@@ -162,8 +226,10 @@
   </main>
 
   <footer>
-    <div class="wrap">
-      Glaciora is built with SpriteKit and Objective-C for iOS 13 and later. Developer contact: <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.
+    <div class="wrap footer-row">
+      <span>Glaciora is built with SpriteKit and Objective-C for iOS 13 and later.</span>
+      <span>Developer contact: <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</span>
+      <span><a href="privacy.html">Privacy Policy</a></span>
     </div>
   </footer>
 </body>
